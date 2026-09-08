@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wooden Wristwatch | Mark Fedio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        :root {
+            --primary-color: #10B981; /* Emerald Green */
+            --secondary-color: #1F2937; /* Dark Gray/Slate */
+            --text-color: #374151; /* Medium Gray */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: #F9FAFB;
+        }
+        .text-primary { color: var(--primary-color); }
+        .bg-primary { background-color: var(--primary-color); }
+
+        /* Style for the captioned image blocks */
+        .image-block {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #E5E7EB;
+        }
+        /* Ensure image fills container while maintaining aspect ratio */
+        .image-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-gray-900 transition duration-300 hover:text-primary flex items-center">
+                <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i> Back to Portfolio
+            </a>
+            <div class="text-gray-700">
+                <span class="text-sm font-semibold">Mark Fedio</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- PROJECT TITLE & SUMMARY -->
+            <header class="mb-12 text-center">
+                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl mb-4">
+                    Wooden Wristwatch
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Progress pictures and captions of what went into making my custom wristwatch
+                </p>
+               
+            </header>
+            
+            <!-- INTRODUCTION -->
+            <section class="prose max-w-none text-lg leading-relaxed mb-16">
+                <p>
+                        This project was completely for fun, and I put a lot of time into it. This is actually my second version
+                        of such a project because I had a lot of design issues to correct. My best estimates place the total work
+                        on this watch at around 100 hours with probably a 50/50 split of that on the design/CAD of the watch and
+                        actually building it. All together, I have 74 files on my computer that went into making this.
+                </p>
+                
+            </section>
+
+            <!-- IMAGE SHOWCASE: PROGRESS STEPS -->
+            <section class="space-y-12">
+                
+                <div class="image-block bg-white rounded-xl overflow-hidden">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="watchMark2FinishedPhotos.jpg" alt="Finished Watch Photos" class="h-full w-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Finished Watch Pictures</h3>
+                        <p class="text-gray-700">
+                                These are pictures of the finished watch! You can see everything from the face, to the band, to
+                                the screws on the back, to how the clasp works. I cut and engraved the wood using a laser cutter at my school.
+                                In all, the watch is 11.7mm thick with a face diameter of 35mm and a case diameter of 42mm.
+                        </p>
+                    </div>
+                </div>
+
+                <!--  2: -->
+                <div class="image-block bg-white rounded-xl overflow-hidden">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="watchMark2DrillJigPictures.jpg" alt="Image showing the 3D-printed drill jigs" class="h-full w-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">3D-Printed Drill Jigs</h3>
+                        <p class="text-gray-700">
+                                To make precise drill holes, I 3D-printed jigs that I could line up with a drill press.
+                                The two pictures on the left show the wood for a piece of the bracelet and then the 3D-printed
+                                top that shows me exactly where I needed to drill. The two pictures on the right are how I went
+                                about creating the holes for the magnets.
+                        </p>
+                    </div>
+                </div>
+                <!--  3: -->
+                <div class="image-block bg-white rounded-xl overflow-hidden">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="watchMark2AssemblyPictures.jpg" alt="The main components of the watch" class="h-full w-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Main Components</h3>
+                        <p class="text-gray-700">
+                                These are the main pieces of the watch before they get assembled together. 
+                        </p>
+                        <br>
+                        <p class="text-gray-700">
+                                On the left
+                                is the case of the watch without the center. Note the hole for crown, I used a drill jig for that too.
+                        </p>
+                        <br>
+                        <p class="text-gray-700">
+                                The top middle picture is the bottom of the top of the case; you can see the magnets that connect it to the
+                                rest of the case.
+                        </p>
+                        <br>
+                        <p class="text-gray-700">
+                                The bottom middle image is of the internals of the watch. I used a Miyota 203A movement and 3D-printed something
+                                to hold it securely. I superglued threaded inserts into this part too, which is where the screws in the bottom of
+                                the case screw into.
+                        </p>
+
+                                
+                                 
+                    </div>
+                </div>
+                <!--  4: -->
+                <div class="image-block bg-white rounded-xl overflow-hidden">
+                        <div class="aspect-w-4 aspect-h-3">
+                            <img src="watchMark2MicroscopePictures.jpg" alt="Using a microscope to attach the watch hands" class="h-full w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Attaching The Hands</h3>
+                            <p class="text-gray-700">
+                                I used a microscope at my school to make sure I was attaching the hands correctly.
+                                This step is by far the most stressful because I'm very inexperienced in the actual
+                                watch-assembly steps and it's really easy to screw something up.
+                                </p>
+                            <br>
+                            <p class="text-gray-700">
+                                    I didn't take pictures of the tools used to put the hands on (documenting
+                                    wasn't exactly at the forefront of my mind), but you essentially just press them on to
+                                    the watch movement (much easier said than done, however).
+                            </p>                            
+                                    
+                                     
+                        </div>
+                    </div>
+
+            </section>
+            
+            <!-- CONCLUSION & TAKEAWAYS -->
+            <section class="prose max-w-none text-lg leading-relaxed mt-16 pt-8 border-t border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Engineering Takeaways</h2>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Problem-Solving: I had a lot of creative solutions to problems I encountered. Some examples are using
+                        the threaded inserts so the screws had something strong to screw into, all of the drill jigs I made, and
+                        using the very tiny magnets to attach the case top.
+                    </li>
+                    <li>Not Chasing Perfection: There's a saying I've read that roughly goes "if you want perfection, don't use wood." There are numerous imperfections
+                        in the watch (some due to it being made of wood, but many because my skills are far from perfect). You can probably spot
+                        some of them in the images, but a lot of them only I will notice because I know they're there. However, I'm okay with them, and
+                        I think they add some character to my watch. After all, if I wanted a perfect wooden watch, I could've bought one online. Instead,
+                        mine is 1 of 1!
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <a href="index.html#projects" class="inline-flex items-center text-primary font-semibold hover:text-emerald-600 transition duration-300">
+                        <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Return to All Projects
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-secondary text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2025 Mark Fedio. Built with HTML, Tailwind CSS, and a focus on impact.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR ICONS -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
