@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Fedio | Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for professional icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Custom styles to enhance aesthetics */
+        :root {
+            --primary-color: #10B981; /* Emerald Green */
+            --secondary-color: #1F2937; /* Dark Gray/Slate */
+            --text-color: #374151; /* Medium Gray */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: #F9FAFB;
+        }
+        .text-primary { color: var(--primary-color); }
+        .bg-primary { background-color: var(--primary-color); }
+
+        /* Custom animation for hero text */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-on-load {
+            animation: fadeIn 1s ease-out;
+        }
+        /* Style for the project cards */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -2px rgba(16, 185, 129, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 
+        NAVIGATION BAR 
+        Uses flexbox for responsive layout and fixed positioning 
+    -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="#hero" class="text-2xl font-bold text-gray-900 transition duration-300 hover:text-primary">
+                        Mark Fedio
+                    </a>
+                </div>
+                <!-- Desktop Menu Links -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition duration-300">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition duration-300">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition duration-300">Projects</a>
+                    <a href="#contact" class="text-white bg-primary rounded-full px-4 py-2 text-sm font-semibold hover:bg-emerald-600 transition duration-300 shadow-md">Get in Touch</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none transition duration-300">
+                        <i data-lucide="menu" id="menu-icon"></i>
+                        <i data-lucide="x" id="close-icon" class="hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-white border-t border-gray-200">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 transition duration-300">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 transition duration-300">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 transition duration-300">Projects</a>
+                <a href="#contact" class="block w-full text-center px-4 py-3 bg-primary text-white font-semibold hover:bg-emerald-600 transition duration-300 mt-2">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT SECTIONS -->
+    <main class="py-12">
+        
+        <!-- 
+            HERO SECTION 
+            The introduction and main call-to-action
+        -->     
+        <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 text-center">
+            <div class="fade-in-on-load">
+                
+                <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl mb-4">
+                    Hi, I'm <span class="text-primary">Mark Fedio</span>
+                </h1>
+                <p class="mt-3 max-w-3xl mx-auto text-xl text-gray-500 sm:text-2xl">
+                    Junior at Tufts University studying Computer Science
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border border-gray-300 text-base font-medium rounded-full shadow-lg text-gray-700 bg-secondary hover:bg-gray-300 transition duration-300">
+                        View My Work <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:markcfedio@gmail.com" class="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-full text-gray-700 bg-white hover:bg-gray-300 transition duration-300 shadow-md">
+                        Email Me <i data-lucide="mail" class="ml-2 w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            ABOUT ME SECTION 
+            Detail your experience, education, and personality
+        -->
+        <section id="about" class="bg-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-primary text-sm font-semibold uppercase tracking-wider">Who I Am</span>
+                </div>
+                <div class="max-w-4xl mx-auto text-lg space-y-6">
+                    <p>
+                        I am a highly motivated junior studying computer science in Tufts University's School of Engineering. 
+                        My core curriculum has focused on C and C++, and I've taken electives that have taught me HTML, CSS, 
+                        Javascript, and Python, the first three of which I'm using to help me create this very site! 
+                        I have a passion for using computer science to solve problems, and I'm always expanding my knowledge.
+                        In my free time, I use my problem-solving skills and creativity in physical mediums as well.  
+                    </p>
+                    <p class="text-primary font-medium">
+                        I am currently seeking opportunities to apply my knowledge in challenging roles where I can contribute to meaningful projects and continue my development as an engineer.
+                    </p>
+                    
+                    <div class="pt-6">
+                        <a href="MarkFedioResume.pdf" target="_blank" class="inline-flex items-center text-sm font-medium text-primary hover:text-emerald-600 transition duration-300">
+                            Download Full Resume <i data-lucide="download" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-primary text-sm font-semibold uppercase tracking-wider">Expertise</span>
+                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        My Technical Toolkit
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 max-w-6xl mx-auto">
+                    <!-- Skill Item 1: Core Languages -->
+                    <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
+                        <i data-lucide="terminal" class="w-8 h-8 text-primary mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Core Languages</h3>
+                        <p class="text-sm text-gray-500 mt-1 text-center">C/C++, Java, Python, Swift</p>
+                    </div>
+                    <!-- Skill Item 2: Web Fundamentals -->
+                    <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
+                        <i data-lucide="code" class="w-8 h-8 text-primary mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Web Fundamentals</h3>
+                        <p class="text-sm text-gray-500 mt-1 text-center">HTML, CSS, JavaScript, React, APIs</p>
+                    </div>
+                    <!-- Skill Item 3: CS Theory & Databases -->
+                    <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
+                        <i data-lucide="layers" class="w-8 h-8 text-primary mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Theory & Tools</h3>
+                        <p class="text-sm text-gray-500 mt-1 text-center">Data Structures, Algorithms, GitHub</p>
+                    </div>
+                    <!-- Skill Item 4: Data/Analysis -->
+                    <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
+                        <i data-lucide="bar-chart" class="w-8 h-8 text-primary mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Analysis & Design</h3>
+                        <p class="text-sm text-gray-500 mt-1 text-center">Object-Oriented Design (OOD), Data Analytics, Visual Studio Code</p>
+                    </div>
+                    <!-- Skill Item 5: Fabrication -->
+                    <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
+                        <i data-lucide="hammer" class="w-8 h-8 text-primary mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Fabrication</h3>
+                        <p class="text-sm text-gray-500 mt-1 text-center">CAD, Prusa Slicer, Inkscape, Woodworking</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="bg-gray-50 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-primary text-sm font-semibold uppercase tracking-wider">My Portfolio</span>
+                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Featured Projects
+                    </h2>
+                </div>
+
+                <div class="space-y-16">
+                    <!-- Project 1: Chess -->
+                    <div class="project-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
+                        <div class="md:w-1/2 p-6 md:p-12 space-y-4">
+                            <h3 class="text-2xl font-bold text-gray-900">Chess</h3>
+                            <p class="text-gray-500">
+                                Personal Project
+                            </p>
+                            <p class="text-gray-700">
+                                Engineered a complete, playable chess application from scratch using Python and Pygame. Leveraged object-oriented programming to efficiently manage complex game state, enforce strict rules (including castling and checkmate), and handle piece logic. Compiled to WebAssembly using Pygbag for native browser play. No AI used.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                <li>Python & Pygame</li>
+                                <li>WebAssembly (Pygbag) Deployment</li>
+                            </ul>
+                            <div class="pt-4 flex space-x-4">
+                                <a href="chess/index.html" target="_blank" class="text-primary font-semibold hover:text-emerald-600 flex items-center transition duration-300">
+                                    Play in Browser <i data-lucide="play-circle" class="ml-2 w-4 h-4"></i>
+                                </a>
+                                <a href="https://github.com/MarkFedio/chess/blob/main/README.md" target="_blank" class="text-gray-600 font-semibold hover:text-gray-900 flex items-center transition duration-300">
+                                    GitHub Repo <i data-lucide="github" class="ml-2 w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 overflow-hidden h-64 md:h-96 flex items-center justify-center">
+                            <img class="w-full h-full object-cover block" 
+                                 src="chess.png" 
+                                 alt="Python Chess App">
+                        </div>
+                    </div>
+
+                    <!-- Project 2 (Updated to flex-row-reverse for alternating layout) -->
+                    <div class="project-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex md:flex-row-reverse">
+                        <div class="md:w-1/2 p-6 md:p-12 space-y-4">
+                            <h3 class="text-2xl font-bold text-gray-900">Wooden Wristwatch</h3>
+                            <p class="text-gray-500">
+                                Hobby Project
+                            </p>
+                            <p class="text-gray-700">
+                                My custom wristwatch made out of wood. This project was almost entirely new territory for me,
+                                but I love how it came out.
+                            </p>
+                            <br>
+                            <br>
+                            <div class="pt-4 flex space-x-4">
+                                <a href="watchPictures.html" target="_self" class="text-primary font-semibold hover:text-emerald-600 flex items-center transition duration-300">
+                                    Documentation <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 overflow-hidden h-64 md:h-96 flex items-center justify-center">
+                            <img class="w-full h-full object-cover block" 
+                                 src="watchImage1.jpg">
+                        </div>
+                    </div>
+
+                    <!-- Project 3 (Updated to standard flex for alternating layout) -->
+                    <div class="project-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
+                        <div class="md:w-1/2 p-6 md:p-12 space-y-4">
+                            <h3 class="text-2xl font-bold text-gray-900">Modified Grep Linux Command</h3>
+                            <p class="text-gray-500">
+                                CS15: Data Structures and Algorithms --- Final Project
+                            </p>
+                            <p class="text-gray-700">
+                                A modified recreation of the Linux Grep Command. This program takes in a directory of text files and lets
+                                the user query words from those files. The program writes to an output file all instances of the queried word
+                                and the line number and files in which they were found.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                <li>Custom Hash Map Interface</li>
+                                <li>File I/O</li>
+                            </ul>
+                            <div class="pt-4 flex space-x-4">
+                                <a href="gerpDocumentation.html" target="_self" class="text-primary font-semibold hover:text-emerald-600 flex items-center transition duration-300">
+                                    Documentation <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                                </a>
+                                <a href="mailto:markcfedio@gmail.com" target="_self" class="text-gray-600 font-semibold hover:text-gray-900 flex items-center transition duration-300">
+                                    Source Code Available On Request <i data-lucide="mail" class="ml-2 w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 overflow-hidden h-64 md:h-96 flex items-center justify-center">
+                            
+                            <img class="w-full h-full object-cover block" 
+                                 src="c++Logo.png" 
+                                 alt="c++Logo">
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 (Updated to flex-row-reverse for alternating layout) -->
+                    <div class="project-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex md:flex-row-reverse">
+                        <div class="md:w-1/2 p-6 md:p-12 space-y-4">
+                            <h3 class="text-2xl font-bold text-gray-900">PPM Compression Program</h3>
+                            <p class="text-gray-500">
+                                CS40: Machine Structures --- Midterm Project
+                            </p>
+                            <p class="text-gray-700">
+                                This program compresses a supplied .ppm image (and likewise can decompress a supplied compressed image)
+                                to roughly 1/3rd of the original file size while maintaining ~95% of image data upon decompression.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                <li>Bit Packing</li>
+                                <li>Discrete Cosine Transformations and Linear Quantization</li>
+                            </ul>
+                            <div class="pt-4 flex space-x-4">
+                                <a href="ppmCompressionDocumentation.html" target="_self" class="text-primary font-semibold hover:text-emerald-600 flex items-center transition duration-300">
+                                    Documentation <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                                </a>
+                                <a href="mailto:markcfedio@gmail.com" target="_self" class="text-gray-600 font-semibold hover:text-gray-900 flex items-center transition duration-300">
+                                    Source Code Available On Request <i data-lucide="mail" class="ml-2 w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 overflow-hidden h-64 md:h-96 flex items-center justify-center">
+                            <img class="w-full h-full object-cover block" 
+                                 src="cLogo.png">
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT STUFF -->
+        <section id="contact" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="text-primary text-sm font-semibold uppercase tracking-wider">Let's Connect</span>
+                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        I'm currently open to new opportunities.
+                    </h2>
+                    
+                </div>
+                    <div class="mt-8 pt-6 border-t border-gray-100 text-center">
+                        <p class="text-lg font-mono text-gray-800">markcfedio@gmail.com</p>
+                        <p class="mt-4 flex justify-center space-x-6">
+                            <a href="https://linkedin.com/in/markfedio" target="_blank" class="text-gray-600 hover:text-primary transition duration-300"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        // 1. Initialize Lucide Icons
+        // Renders the icons on the page
+        lucide.createIcons();
+
+        // 2. Mobile Menu Toggle Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isMenuOpen = mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden', !isMenuOpen);
+            closeIcon.classList.toggle('hidden', isMenuOpen);
+        });
+        
+        // Close menu when a link is clicked (for smooth scrolling)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+
+        // 3. Simple Contact Form Handling (Prevents default submission)
+        // NOTE: A real portfolio would need a backend service (like Formspree or a serverless function)
+        // to actually send this email. This front-end code only provides visual feedback.
+        const contactForm = document.getElementById('contactForm');
+        const contactMessage = document.getElementById('contactMessage');
+
+        // Form check (if the form element exists, add the listener to prevent errors if the form was removed from the html)
+        if(contactForm){
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+                
+                // Show loading state
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+
+                // Simulate form submission success
+                setTimeout(() => {
+                    submitButton.textContent = 'Send Message';
+                    submitButton.disabled = false;
+                    
+                    // Show success message
+                    contactMessage.textContent = 'Thank you! Your message has been noted. I will be in touch shortly.';
+                    contactMessage.className = 'mt-4 text-center text-sm font-medium p-3 rounded-lg bg-green-100 text-primary transition duration-300';
+                    contactMessage.classList.remove('hidden');
+
+                    // Clear the form fields
+                    contactForm.reset();
+                }, 1500); // Wait 1.5 seconds to simulate network delay
+            });
+        }
+    </script>
+</body>
+</html>
