@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Timepieces | Mark Fedio</title>
+    
+    <!-- Custom Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
+    <link rel="icon" type="image/png" href="../favicon.png?v=3" sizes="64x64">
+    <link rel="shortcut icon" href="../favicon.ico?v=3">
+    <link rel="apple-touch-icon" href="../favicon.png?v=3">
+    
+    <!-- Google Fonts: Plus Jakarta Sans, Newsreader, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Newsreader"', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#FAF8F5',
+                            100: '#F4F0E8',
+                            200: '#E7E2D7',
+                            300: '#D5CEC0',
+                            400: '#A8A29E',
+                            500: '#78716C',
+                            600: '#57534E',
+                            700: '#44403C',
+                            800: '#292524',
+                            900: '#1C1917',
+                        },
+                        forest: {
+                            50: '#F2F7F4',
+                            100: '#E2EFE7',
+                            700: '#24523E',
+                            800: '#1E3A2F',
+                            900: '#142A22',
+                        },
+                        timber: {
+                            500: '#A36838',
+                            600: '#8A5228',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #FAF8F5;
+            color: #44403C;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .warm-canvas {
+            background-color: #FAF8F5;
+            background-image: radial-gradient(rgba(180, 160, 135, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .craft-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E7E2D7;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .craft-card:hover {
+            border-color: #D5CEC0;
+            box-shadow: 0 14px 28px -6px rgba(28, 25, 23, 0.07);
+        }
+        .craft-btn-primary {
+            background-color: #1E3A2F;
+            color: #FAF8F5;
+            transition: all 0.2s ease;
+        }
+        .craft-btn-primary:hover {
+            background-color: #142A22;
+        }
+        .floating-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: rgba(250, 248, 245, 0.85);
+            border: 1px solid rgba(231, 226, 215, 0.85);
+            box-shadow: 0 10px 25px -5px rgba(28, 25, 23, 0.05);
+        }
+        .craft-card img {
+            cursor: zoom-in;
+            transition: transform 0.25s ease;
+        }
+        .craft-card img:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="warm-canvas min-h-screen text-stone-700">
+
+    <!-- FLOATING NAV -->
+    <header class="sticky top-4 z-50 px-4 sm:px-6 max-w-5xl mx-auto">
+        <nav class="floating-nav rounded-full px-5 py-3 flex items-center justify-between">
+            <a href="../index.html#physical-projects" class="group flex items-center space-x-2 text-sm font-semibold text-stone-800 hover:text-forest-800 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-timber-600"></span>
+                <span class="text-xs font-mono font-medium text-stone-500">Horology &bull; Mark Fedio</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            
+            <!-- PROJECT TITLE & SUMMARY -->
+            <header class="mb-14 text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <span class="font-mono text-xs px-3 py-1 rounded-full bg-stone-100 text-timber-600 border border-stone-200 uppercase tracking-wider font-semibold">Horology &bull; 3 Editions</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight mb-4">
+                    Custom Timepieces
+                </h1>
+                <p class="text-lg sm:text-xl text-stone-600 leading-relaxed font-normal">
+                    A collection of custom handcrafted wristwatches combining laser cutting, 3D printing, custom drill press jigs, and horological movements.
+                </p>
+            </header>
+
+            <!-- THE 3 WATCHES OVERVIEW (WATCH 1, WATCH 2, WATCH 3) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                
+                <!-- Watch 1 Card: Light Wood -->
+                <div class="craft-card rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="bg-[#F4EFE6] flex items-center justify-center h-64 p-4 border-b border-stone-200">
+                            <img src="watch1_thumb.jpg" alt="Watch 1: Light Wood" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-mono text-xs font-semibold uppercase tracking-wider text-timber-600">Watch 1</span>
+                                <span class="font-mono text-xs px-2 py-0.5 bg-stone-100 text-stone-700 rounded border border-stone-200">Light Hardwood</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-stone-900 mb-2">Light Wood Original</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed">
+                                My original custom wooden watch build. Engineered from natural light hardwood with laser-engraved dial markers, 3D-printed movement housing, and custom-drilled wooden link bracelet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-stone-100 mt-2">
+                        <span class="font-mono text-xs text-stone-400 font-medium block mb-2">Documentation:</span>
+                        <a href="#detailed-documentation" class="rounded-xl border border-forest-100 bg-forest-50/60 hover:bg-forest-100/80 transition duration-200 h-36 flex flex-col items-center justify-center text-center p-4 group">
+                            <div class="w-10 h-10 rounded-full bg-forest-100 text-forest-800 flex items-center justify-center mb-2 group-hover:scale-110 transition duration-200">
+                                <i data-lucide="book-open" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-xs font-bold text-stone-900 group-hover:text-forest-800 transition duration-150">Complete 100-Hour Build Log</span>
+                            <span class="font-mono text-[11px] text-stone-500 mt-0.5">CAD &bull; Drill Jigs &bull; Assembly &darr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Watch 2 Card: Dark Wood -->
+                <div class="craft-card rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="bg-[#F4EFE6] flex items-center justify-center h-64 p-4 border-b border-stone-200">
+                            <img src="watch2.jpg" alt="Watch 2: Dark Wood" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-mono text-xs font-semibold uppercase tracking-wider text-timber-600">Watch 2</span>
+                                <span class="font-mono text-xs px-2 py-0.5 bg-stone-100 text-stone-700 rounded border border-stone-200">Dark Hardwood</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-stone-900 mb-2">Dark Wood Edition</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed">
+                                Crafted from rich dark hardwood with high-contrast grain patterns. Features an engraved "FEDIO" wood dial, hand-assembled wooden link bracelet, and brass ring clasp hardware.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-stone-100 mt-2">
+                        <span class="font-mono text-xs text-stone-400 font-medium block mb-2">Wrist View:</span>
+                        <div class="rounded-xl overflow-hidden border border-stone-200 h-36 bg-[#F4EFE6] flex items-center justify-center p-2">
+                            <img src="watch2Wrist.jpg" alt="Dark Wood Watch on Wrist" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Watch 3 Card: Acrylic & Modular Bracelets -->
+                <div class="craft-card rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="bg-[#F4EFE6] flex items-center justify-center h-64 p-4 border-b border-stone-200">
+                            <img src="watch3.jpg" alt="Watch 3: Acrylic" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-mono text-xs font-semibold uppercase tracking-wider text-timber-600">Watch 3</span>
+                                <span class="font-mono text-xs px-2 py-0.5 bg-stone-100 text-stone-700 rounded border border-stone-200">Modular Acrylic</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-stone-900 mb-2">Acrylic &amp; Modular</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed">
+                                An exploration of transparency and modular mechanics. Clear laser-cut acrylic case showcasing the movement, with interchangeable bracelet sets (pictured: navy, clear, yellow, orange. More in the works!) that can be swapped or mixed.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-stone-100 mt-2">
+                        <span class="font-mono text-xs text-stone-400 font-medium block mb-2">Wrist Views (Clear &amp; Mixed):</span>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="rounded-xl overflow-hidden border border-stone-200 h-36 bg-[#F4EFE6] flex items-center justify-center p-2">
+                                <img src="watch3Wrist.jpg" alt="Clear Acrylic on Wrist" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <div class="rounded-xl overflow-hidden border border-stone-200 h-36 bg-[#F4EFE6] flex items-center justify-center p-2">
+                                <img src="watch3Mixed.jpg" alt="Mixed Color Bracelet on Wrist" class="max-h-full max-w-full object-contain">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECTION DIVIDER FOR DETAILED WATCH 1 DOCUMENTATION -->
+            <div id="detailed-documentation" class="max-w-4xl mx-auto pt-12 border-t border-stone-200">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 mb-3">
+                        <span class="w-4 h-px bg-forest-800"></span>
+                        <span class="font-mono text-xs uppercase tracking-widest text-forest-800 font-semibold">Build Documentation</span>
+                        <span class="w-4 h-px bg-forest-800"></span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">Watch 1: The Build Process</h2>
+                    <p class="text-stone-500 font-mono text-xs mt-2">~100 Hours &bull; 74 Design Files &bull; Iterative Engineering</p>
+                </div>
+            
+                <!-- INTRODUCTION -->
+                <div class="craft-card rounded-2xl p-7 sm:p-9 text-base sm:text-lg leading-relaxed text-stone-600 mb-12">
+                    <p>
+                        This project was completely for fun, and I put a lot of time into it. This is actually my second version
+                        of such a project because I had a lot of design issues to correct. My best estimates place the total work
+                        on this watch at around 100 hours with probably a 50/50 split of that on the design/CAD of the watch and
+                        actually building it. All together, I have 74 files on my computer that went into making this.
+                    </p>
+                </div>
+
+                <!-- IMAGE SHOWCASE: PROGRESS STEPS -->
+                <div class="space-y-12">
+                    
+                    <div class="craft-card rounded-2xl overflow-hidden">
+                        <div class="bg-[#F4EFE6] flex items-center justify-center p-6 border-b border-stone-200">
+                            <img src="watchMark2FinishedPhotos.jpg" alt="Finished Watch Photos" class="w-full h-auto object-contain block rounded-lg">
+                        </div>
+                        <div class="p-7">
+                            <span class="font-mono text-xs text-timber-600 uppercase tracking-wider font-semibold block mb-1">Overview</span>
+                            <h3 class="text-xl font-bold text-stone-900 mb-3">Finished Watch Pictures</h3>
+                            <p class="text-stone-600 leading-relaxed text-sm sm:text-base">
+                                These are pictures of the finished watch! You can see everything from the face, to the band, to
+                                the screws on the back, to how the clasp works. I cut and engraved the wood using a laser cutter at my school.
+                                In all, the watch is 11.7mm thick with a face diameter of 35mm and a case diameter of 42mm.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="craft-card rounded-2xl overflow-hidden">
+                        <div class="bg-[#F4EFE6] flex items-center justify-center p-6 border-b border-stone-200">
+                            <img src="watchMark2DrillJigPictures.jpg" alt="3D-printed drill jigs" class="w-full h-auto object-contain block rounded-lg">
+                        </div>
+                        <div class="p-7">
+                            <span class="font-mono text-xs text-timber-600 uppercase tracking-wider font-semibold block mb-1">Precision Tooling</span>
+                            <h3 class="text-xl font-bold text-stone-900 mb-3">3D-Printed Drill Jigs</h3>
+                            <p class="text-stone-600 leading-relaxed text-sm sm:text-base">
+                                To make precise drill holes, I 3D-printed jigs that I could line up with a drill press.
+                                The two pictures on the left show the wood for a piece of the bracelet and then the 3D-printed
+                                top that shows me exactly where I needed to drill. The two pictures on the right are how I went
+                                about creating the holes for the magnets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="craft-card rounded-2xl overflow-hidden">
+                        <div class="bg-[#F4EFE6] flex items-center justify-center p-6 border-b border-stone-200">
+                            <img src="watchMark2AssemblyPictures.jpg" alt="The main components of the watch" class="w-full h-auto object-contain block rounded-lg">
+                        </div>
+                        <div class="p-7">
+                            <span class="font-mono text-xs text-timber-600 uppercase tracking-wider font-semibold block mb-1">Internal Architecture</span>
+                            <h3 class="text-xl font-bold text-stone-900 mb-3">Main Components</h3>
+                            <div class="space-y-3 text-stone-600 leading-relaxed text-sm sm:text-base">
+                                <p>These are the main pieces of the watch before they get assembled together.</p>
+                                <p>On the left is the case of the watch without the center. Note the hole for crown; I used a custom drill jig for that too.</p>
+                                <p>The top middle picture is the bottom of the top of the case; you can see the magnets that connect it to the rest of the case.</p>
+                                <p>The bottom middle image is of the internals of the watch. I used a Miyota 203A movement and 3D-printed something to hold it securely. I superglued threaded inserts into this part too, which is where the screws in the bottom of the case screw into.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="craft-card rounded-2xl overflow-hidden">
+                        <div class="bg-[#F4EFE6] flex items-center justify-center p-6 border-b border-stone-200">
+                            <img src="watchMark2MicroscopePictures.jpg" alt="Using a microscope to attach the watch hands" class="w-full h-auto object-contain block rounded-lg">
+                        </div>
+                        <div class="p-7">
+                            <span class="font-mono text-xs text-timber-600 uppercase tracking-wider font-semibold block mb-1">Micromanipulation</span>
+                            <h3 class="text-xl font-bold text-stone-900 mb-3">Attaching The Hands</h3>
+                            <div class="space-y-3 text-stone-600 leading-relaxed text-sm sm:text-base">
+                                <p>I used a microscope at my school to make sure I was attaching the hands correctly. This step is by far the most stressful because I'm very inexperienced in the actual watch-assembly steps and it's really easy to screw something up.</p>
+                                <p>I didn't take pictures of the tools used to put the hands on (documenting wasn't exactly at the forefront of my mind), but you essentially just press them on to the watch movement (much easier said than done, however).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- CONCLUSION & TAKEAWAYS -->
+                <div class="craft-card rounded-2xl p-7 sm:p-9 mt-12">
+                    <h2 class="text-2xl font-bold text-stone-900 mb-6">Key Engineering Takeaways</h2>
+                    <ul class="space-y-4 text-stone-600 text-sm sm:text-base leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-forest-800 mt-2.5 flex-shrink-0"></span>
+                            <div>
+                                <strong class="text-stone-900 font-semibold">Problem-Solving:</strong> I had a lot of creative solutions to problems I encountered. Some examples are using the threaded inserts so the screws had something strong to screw into, all of the drill jigs I made, and using the very tiny magnets to attach the case top.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-timber-600 mt-2.5 flex-shrink-0"></span>
+                            <div>
+                                <strong class="text-stone-900 font-semibold">Not Chasing Perfection:</strong> There's a saying I've read that roughly goes "if you want perfection, don't use wood." There are numerous imperfections in the watch (some due to it being made of wood, but many because my skills are far from perfect). You can probably spot some of them in the images, but a lot of them only I will notice because I know they're there. However, I'm okay with them, and I think they add character to my watch. After all, if I wanted a perfect wooden watch, I could've bought one online. Instead, mine is 1 of 1!
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-6 border-t border-stone-100">
+                        <a href="../index.html#physical-projects" class="craft-btn-primary px-5 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                            <span>Return to All Projects</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div><!-- closes #detailed-documentation -->
+        </div><!-- closes max-w-6xl -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-950 py-8 px-4 text-center border-t border-stone-900 text-stone-500 text-xs font-mono">
+        <p>&copy; 2026 Mark Fedio &bull; Handcrafted with Code &amp; Craft</p>
+    </footer>
+
+    <!-- REUSABLE LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] bg-stone-950/90 backdrop-blur-md hidden flex flex-col items-center justify-between p-4 sm:p-8 opacity-0 transition-opacity duration-250 pointer-events-none" role="dialog" aria-modal="true">
+        <!-- Lightbox Header / Controls -->
+        <div class="w-full max-w-6xl flex items-center justify-between text-white z-10 py-2">
+            <div class="flex items-center gap-3">
+                <span id="lightbox-counter" class="font-mono text-xs text-stone-400 bg-stone-900/80 px-2.5 py-1 rounded-full border border-stone-800"></span>
+                <span id="lightbox-caption" class="text-xs sm:text-sm font-medium text-stone-200 truncate max-w-xs sm:max-w-md"></span>
+            </div>
+            <button id="lightbox-close" class="p-2 rounded-full bg-stone-900/80 hover:bg-stone-800 text-stone-300 hover:text-white border border-stone-700 transition" aria-label="Close image zoom">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Lightbox Image Stage with Prev / Next -->
+        <div class="relative w-full max-w-6xl flex-1 flex items-center justify-center my-2 select-none">
+            <button id="lightbox-prev" class="absolute left-2 sm:left-4 z-20 p-2.5 sm:p-3 rounded-full bg-stone-900/80 hover:bg-stone-800 text-stone-300 hover:text-white border border-stone-700 transition -translate-y-1/2 top-1/2" aria-label="Previous image">
+                <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            </button>
+
+            <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-[92vw] sm:max-w-full object-contain rounded-xl shadow-2xl transition-transform duration-200">
+
+            <button id="lightbox-next" class="absolute right-2 sm:right-4 z-20 p-2.5 sm:p-3 rounded-full bg-stone-900/80 hover:bg-stone-800 text-stone-300 hover:text-white border border-stone-700 transition -translate-y-1/2 top-1/2" aria-label="Next image">
+                <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            </button>
+        </div>
+
+        <!-- Lightbox Footer Hint -->
+        <div class="w-full text-center text-[11px] font-mono text-stone-500 py-1">
+            <span>Use <kbd class="px-1.5 py-0.5 rounded bg-stone-800 text-stone-400 border border-stone-700">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-stone-800 text-stone-400 border border-stone-700">→</kbd> to navigate &bull; <kbd class="px-1.5 py-0.5 rounded bg-stone-800 text-stone-400 border border-stone-700">ESC</kbd> to close</span>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR ICONS & LIGHTBOX -->
+    <script>
+        lucide.createIcons();
+
+        // --- LIGHTBOX GALLERY LOGIC ---
+        const lightboxModal = document.getElementById('lightbox-modal');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+
+        const galleryImages = Array.from(document.querySelectorAll('.craft-card img'));
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            if (index < 0 || index >= galleryImages.length) return;
+            currentImageIndex = index;
+            const img = galleryImages[currentImageIndex];
+            
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || '';
+            lightboxCaption.textContent = img.alt || 'Build photo';
+            lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+
+            lightboxModal.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                lightboxModal.classList.remove('opacity-0', 'pointer-events-none');
+            });
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                lightboxModal.classList.add('hidden');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 250);
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            openLightbox(currentImageIndex);
+        }
+
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            openLightbox(currentImageIndex);
+        }
+
+        galleryImages.forEach((img, idx) => {
+            img.title = 'Click to enlarge';
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openLightbox(idx);
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showNextImage(); });
+        lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrevImage(); });
+
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal || e.target.classList.contains('select-none')) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightboxModal.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowRight') showNextImage();
+            else if (e.key === 'ArrowLeft') showPrevImage();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime American Flag | Mark Fedio</title>
+    
+    <!-- Custom Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=3">
+    <link rel="icon" type="image/png" href="../favicon.png?v=3" sizes="64x64">
+    <link rel="shortcut icon" href="../favicon.ico?v=3">
+    <link rel="apple-touch-icon" href="../favicon.png?v=3">
+    
+    <!-- Google Fonts: Plus Jakarta Sans, Newsreader, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Newsreader"', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#FAF8F5',
+                            100: '#F4F0E8',
+                            200: '#E7E2D7',
+                            300: '#D5CEC0',
+                            400: '#A8A29E',
+                            500: '#78716C',
+                            600: '#57534E',
+                            700: '#44403C',
+                            800: '#292524',
+                            900: '#1C1917',
+                        },
+                        forest: {
+                            50: '#F2F7F4',
+                            100: '#E2EFE7',
+                            700: '#24523E',
+                            800: '#1E3A2F',
+                            900: '#142A22',
+                        },
+                        timber: {
+                            500: '#A36838',
+                            600: '#8A5228',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #FAF8F5;
+            color: #44403C;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .warm-canvas {
+            background-color: #FAF8F5;
+            background-image: radial-gradient(rgba(180, 160, 135, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .craft-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E7E2D7;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .craft-card:hover {
+            border-color: #D5CEC0;
+            box-shadow: 0 14px 28px -6px rgba(28, 25, 23, 0.07);
+        }
+        .craft-btn-primary {
+            background-color: #1E3A2F;
+            color: #FAF8F5;
+            transition: all 0.2s ease;
+        }
+        .craft-btn-primary:hover {
+            background-color: #142A22;
+        }
+        .floating-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: rgba(250, 248, 245, 0.85);
+            border: 1px solid rgba(231, 226, 215, 0.85);
+            box-shadow: 0 10px 25px -5px rgba(28, 25, 23, 0.05);
+        }
+        .craft-card img {
+            cursor: zoom-in;
+            transition: transform 0.25s ease;
+        }
+        .craft-card img:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="warm-canvas min-h-screen text-stone-700">
+
+    <!-- FLOATING NAV -->
+    <header class="sticky top-4 z-50 px-4 sm:px-6 max-w-5xl mx-auto">
+        <nav class="floating-nav rounded-full px-5 py-3 flex items-center justify-between">
+            <a href="../index.html#physical-projects" class="group flex items-center space-x-2 text-sm font-semibold text-stone-800 hover:text-forest-800 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-timber-600"></span>
+                <span class="text-xs font-mono font-medium text-stone-500">Pop-Art &bull; Mark Fedio</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            
+            <!-- HEADER -->
+            <header class="mb-14 text-center">
+                <div class="flex flex-wrap justify-center gap-2 mb-4">
+                    <span class="font-mono text-xs px-3 py-1 rounded-full bg-stone-100 text-stone-700 border border-stone-200 uppercase tracking-wider">Woodworking</span>
+                    <span class="font-mono text-xs px-3 py-1 rounded-full bg-stone-100 text-stone-700 border border-stone-200 uppercase tracking-wider">Joinery</span>
+                    <span class="font-mono text-xs px-3 py-1 rounded-full bg-stone-100 text-stone-700 border border-stone-200 uppercase tracking-wider">Finish Carpentry</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight mb-4">
+                    Prime American Flag
+                </h1>
+                <p class="text-lg sm:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed">
+                    A creative wall-mounted American flag sculpture crafted from Prime Hydration bottles set within a custom handcrafted wooden frame.
+                </p>
+            </header>
+            
+            <!-- PROJECT WRITE-UP -->
+            <section class="craft-card p-7 sm:p-9 rounded-2xl mb-12">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-timber-600 border border-stone-200">
+                        <i data-lucide="flag" class="w-4 h-4"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-stone-900">Concept &amp; Fabrication</h2>
+                </div>
+                <div class="space-y-4 text-stone-600 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        My "Prime American Flag" is a custom pop-art fabrication project designed to reconstruct the iconic American flag using color-coordinated Prime Hydration bottles:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1.5 pl-2 text-stone-800 font-medium">
+                        <li><span class="text-blue-700 font-semibold">Blue Raspberry:</span> The 50-star union canton</li>
+                        <li><span class="text-red-700 font-semibold">Tropical Punch:</span> The red stripes</li>
+                        <li><span class="text-stone-700 font-semibold">Meta Moon:</span> The white stripes</li>
+                    </ul>
+                    <p>
+                        The build required precise dimensional planning to ensure all bottles aligned symmetrically into seamless rows. I milled, drilled, and stained custom wooden backing rails and a heavy-duty outer perimeter frame, locked together with polished metal corner reinforcement brackets for a clean, gallery-ready presentation.
+                        Even being only 5 bottles wide by 7 bottles tall, it's close to 4' x 2'. Maybe one day I'll go for all 13 stripes. 
+                    </p>
+                </div>
+            </section>
+
+            <!-- PHOTO GALLERY SECTION -->
+            <section class="space-y-8">
+                <div class="flex items-center space-x-3 mb-2">
+                    <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-timber-600 border border-stone-200">
+                        <i data-lucide="image" class="w-4 h-4"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-stone-900">Finished Flag Gallery</h2>
+                </div>
+
+                <div class="craft-card rounded-2xl overflow-hidden">
+                    <div class="bg-[#F4EFE6] flex items-center justify-center p-6 border-b border-stone-200">
+                        <img src="primeFlag.jpg" alt="Finished Prime American Flag" class="w-full h-auto object-contain block rounded-lg">
+                    </div>
+                    <div class="p-6">
+                        <span class="font-mono text-xs text-timber-600 uppercase tracking-wider font-semibold block mb-1">Full Installation</span>
+                        <h3 class="text-xl font-bold text-stone-900 mb-2">The Completed Flag</h3>
+                        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+                            The full finished American flag installation, showcasing overall symmetry, vibrant bottle color contrast, and hand-stained wooden frame. It's currently hung in my dorm room.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="craft-card rounded-2xl overflow-hidden">
+                        <div class="bg-[#F4EFE6] flex items-center justify-center min-h-[260px] p-4 border-b border-stone-200">
+                            <img src="primeFlagDetail1.jpg" alt="Corner Bracket Detail" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-bold text-stone-900 mb-1">Corner Hardware &amp; Joinery</h4>
+                            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">Close-up of the metal reinforcement corner brackets securing the solid wood frame.</p>
+                        </div>
+                    </div>
+
+                    <div class="craft-card rounded-2xl overflow-hidden">
+                        <div class="bg-[#F4EFE6] flex items-center justify-center min-h-[260px] p-4 border-b border-stone-200">
+                            <img src="primeFlagDetail2.jpg" alt="Staining Wooden Frame" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-bold text-stone-900 mb-1">Frame Staining &amp; Prep</h4>
+                            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">Hand-applying rich wood stain to the pine perimeter frame boards before final assembly.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RETURN LINK -->
+            <div class="mt-16 pt-8 border-t border-stone-200">
+                <a href="../index.html#physical-projects" class="craft-btn-primary px-5 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Return to All Projects</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-950 py-8 px-4 text-center border-t border-stone-900 text-stone-500 text-xs font-mono">
+        <p>&copy; 2026 Mark Fedio &bull; Handcrafted with Code &amp; Craft</p>
+    </footer>
+
+    <!-- REUSABLE LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] bg-stone-950/90 backdrop-blur-md hidden flex flex-col items-center justify-between p-4 sm:p-8 opacity-0 transition-opacity duration-250 pointer-events-none" role="dialog" aria-modal="true">
+        <!-- Lightbox Header / Controls -->
+        <div class="w-full max-w-6xl flex items-center justify-between text-white z-10 py-2">
+            <div class="flex items-center gap-3">
+                <span id="lightbox-counter" class="font-mono text-xs text-stone-400 bg-stone-900/80 px-2.5 py-1 rounded-full border border-stone-800"></span>
+                <span id="lightbox-caption" class="text-xs sm:text-sm font-medium text-stone-200 truncate max-w-xs sm:max-w-md"></span>
+            </div>
+            <button id="lightbox-close" class="p-2 rounded-full bg-stone-900/80 hover:bg-stone-800 text-stone-300 hover:text-white border border-stone-700 transition" aria-label="Close image zoom">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Lightbox Image Stage with Prev / Next -->
+        <div class="relative w-full max-w-6xl flex-1 flex items-center justify-center my-2 select-none">
+            <button id="lightbox-prev" class="absolute left-2 sm:left-4 z-20 p-2.5 sm:p-3 rounded-full bg-stone-900/80 hover:bg-stone-800 text-stone-300 hover:text-white border border-stone-700 transition -translate-y-1/2 top-1/2" aria-label="Previous image">
+                <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            </button>
+
+            <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-[92vw] sm:max-w-full object-contain rounded-xl shadow-2xl transition-transform duration-200">
+
+            <button id="lightbox-next" class="absolute right-2 sm:right-4 z-20 p-2.5 sm:p-3 rounded-full bg-stone-900/80 hover:bg-stone-800 text-stone-300 hover:text-white border border-stone-700 transition -translate-y-1/2 top-1/2" aria-label="Next image">
+                <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            </button>
+        </div>
+
+        <!-- Lightbox Footer Hint -->
+        <div class="w-full text-center text-[11px] font-mono text-stone-500 py-1">
+            <span>Use <kbd class="px-1.5 py-0.5 rounded bg-stone-800 text-stone-400 border border-stone-700">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-stone-800 text-stone-400 border border-stone-700">→</kbd> to navigate &bull; <kbd class="px-1.5 py-0.5 rounded bg-stone-800 text-stone-400 border border-stone-700">ESC</kbd> to close</span>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR ICONS & LIGHTBOX -->
+    <script>
+        lucide.createIcons();
+
+        // --- LIGHTBOX GALLERY LOGIC ---
+        const lightboxModal = document.getElementById('lightbox-modal');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+
+        const galleryImages = Array.from(document.querySelectorAll('.craft-card img'));
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            if (index < 0 || index >= galleryImages.length) return;
+            currentImageIndex = index;
+            const img = galleryImages[currentImageIndex];
+            
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || '';
+            lightboxCaption.textContent = img.alt || 'Build photo';
+            lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+
+            lightboxModal.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                lightboxModal.classList.remove('opacity-0', 'pointer-events-none');
+            });
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                lightboxModal.classList.add('hidden');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 250);
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            openLightbox(currentImageIndex);
+        }
+
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            openLightbox(currentImageIndex);
+        }
+
+        galleryImages.forEach((img, idx) => {
+            img.title = 'Click to enlarge';
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openLightbox(idx);
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showNextImage(); });
+        lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrevImage(); });
+
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal || e.target.classList.contains('select-none')) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightboxModal.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowRight') showNextImage();
+            else if (e.key === 'ArrowLeft') showPrevImage();
+        });
+    </script>
+</body>
+</html>

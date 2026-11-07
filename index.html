@@ -3,392 +3,708 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark Fedio | Professional Portfolio</title>
+    <title>Mark Fedio | Software Engineer & Craftsman</title>
+    
+    <!-- Custom Favicon (Base64 Data URI + File fallback) -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,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">
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,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">
+    <link rel="apple-touch-icon" href="data:image/png;base64,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">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+    
+    <!-- Google Fonts: Plus Jakarta Sans (Modern Editorial Sans), Newsreader (Refined Serif Accent), JetBrains Mono (Technical/Tags) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons for professional icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <style>
-        /* Custom styles to enhance aesthetics */
-        :root {
-            --primary-color: #10B981; /* Emerald Green */
-            --secondary-color: #1F2937; /* Dark Gray/Slate */
-            --text-color: #374151; /* Medium Gray */
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Newsreader"', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#FAF8F5',
+                            100: '#F4F0E8',
+                            200: '#E7E2D7',
+                            300: '#D5CEC0',
+                            400: '#A8A29E',
+                            500: '#78716C',
+                            600: '#57534E',
+                            700: '#44403C',
+                            800: '#292524',
+                            900: '#1C1917',
+                        },
+                        forest: {
+                            50: '#F2F7F4',
+                            100: '#E2EFE7',
+                            700: '#24523E',
+                            800: '#1E3A2F',
+                            900: '#142A22',
+                        },
+                        timber: {
+                            500: '#A36838',
+                            600: '#8A5228',
+                        }
+                    }
+                }
+            }
         }
+    </script>
+    
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
         html {
             scroll-behavior: smooth;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-            background-color: #F9FAFB;
+            background-color: #FAF8F5;
+            color: #44403C;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
-        .text-primary { color: var(--primary-color); }
-        .bg-primary { background-color: var(--primary-color); }
+        
+        /* Subtle warm grain overlay effect (optional organic texture) */
+        .warm-canvas {
+            background-color: #FAF8F5;
+            background-image: radial-gradient(rgba(180, 160, 135, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
 
-        /* Custom animation for hero text */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Card and interactive transitions */
+        .craft-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E7E2D7;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .fade-in-on-load {
-            animation: fadeIn 1s ease-out;
+        .craft-card:hover {
+            transform: translateY(-4px);
+            border-color: #D5CEC0;
+            box-shadow: 0 16px 32px -8px rgba(28, 25, 23, 0.08);
         }
-        /* Style for the project cards */
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        .craft-btn-primary {
+            background-color: #1E3A2F;
+            color: #FAF8F5;
+            transition: all 0.2s ease;
         }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -2px rgba(16, 185, 129, 0.05);
+        .craft-btn-primary:hover {
+            background-color: #142A22;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 16px -4px rgba(30, 58, 47, 0.25);
+        }
+
+        .craft-btn-secondary {
+            background-color: #FFFFFF;
+            border: 1px solid #E7E2D7;
+            color: #292524;
+            transition: all 0.2s ease;
+        }
+        .craft-btn-secondary:hover {
+            background-color: #F4F0E8;
+            border-color: #D5CEC0;
+            transform: translateY(-1px);
+        }
+
+        /* Floating Nav Styling */
+        .floating-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: rgba(250, 248, 245, 0.85);
+            border: 1px solid rgba(231, 226, 215, 0.85);
+            box-shadow: 0 10px 25px -5px rgba(28, 25, 23, 0.05);
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="warm-canvas min-h-screen text-stone-700">
 
     <!-- 
-        NAVIGATION BAR 
-        Uses flexbox for responsive layout and fixed positioning 
+        FLOATING NAV BAR (MODERN ISLAND STYLE)
     -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo/Name -->
-                <div class="flex-shrink-0">
-                    <a href="#hero" class="text-2xl font-bold text-gray-900 transition duration-300 hover:text-primary">
-                        Mark Fedio
-                    </a>
-                </div>
-                <!-- Desktop Menu Links -->
-                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="#about" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition duration-300">About</a>
-                    <a href="#skills" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition duration-300">Skills</a>
-                    <a href="#projects" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition duration-300">Projects</a>
-                    <a href="#contact" class="text-white bg-primary rounded-full px-4 py-2 text-sm font-semibold hover:bg-emerald-600 transition duration-300 shadow-md">Get in Touch</a>
-                </div>
-                <!-- Mobile Menu Button -->
-                <div class="sm:hidden">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none transition duration-300">
-                        <i data-lucide="menu" id="menu-icon"></i>
-                        <i data-lucide="x" id="close-icon" class="hidden"></i>
-                    </button>
-                </div>
+    <header class="sticky top-4 z-50 px-4 sm:px-6 max-w-5xl mx-auto">
+        <nav class="floating-nav rounded-full px-5 py-3 flex items-center justify-between transition-all">
+            <!-- Brand Mark -->
+            <a href="#hero" class="group flex items-center space-x-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-forest-800 transition-transform group-hover:scale-125"></span>
+                <span class="font-bold text-lg text-stone-900 tracking-tight group-hover:text-forest-800 transition-colors">
+                    Mark Fedio
+                </span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium text-stone-600">
+                <a href="#skills" class="px-3 py-1.5 rounded-full hover:text-stone-900 hover:bg-stone-100 transition-colors">Skills</a>
+                <a href="#software-projects" class="px-3 py-1.5 rounded-full hover:text-stone-900 hover:bg-stone-100 transition-colors">Software</a>
+                <a href="#physical-projects" class="px-3 py-1.5 rounded-full hover:text-stone-900 hover:bg-stone-100 transition-colors">Physical</a>
+            </div>
+
+            <!-- CTA / Contact -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="MarkFedioResume.pdf" target="_blank" class="text-xs font-mono font-medium text-stone-600 hover:text-stone-900 px-3 py-1.5 rounded-full hover:bg-stone-100 transition-colors">
+                    Resume <span class="text-stone-400">PDF</span>
+                </a>
+                <a href="#contact" class="craft-btn-primary text-xs font-semibold px-4 py-2 rounded-full tracking-wide">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Toggle Menu" class="p-1.5 text-stone-700 hover:text-stone-900 rounded-lg focus:outline-none">
+                    <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
+                    <i data-lucide="x" id="close-icon" class="w-5 h-5 hidden"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden mt-2 floating-nav rounded-2xl p-4 shadow-xl border border-stone-200">
+            <div class="flex flex-col space-y-2 text-sm font-medium">
+                <a href="#skills" class="px-3 py-2 rounded-lg hover:bg-stone-100 text-stone-800">Skills</a>
+                <a href="#software-projects" class="px-3 py-2 rounded-lg hover:bg-stone-100 text-stone-800">Software Projects</a>
+                <a href="#physical-projects" class="px-3 py-2 rounded-lg hover:bg-stone-100 text-stone-800">Physical Projects</a>
+                <a href="MarkFedioResume.pdf" target="_blank" class="px-3 py-2 rounded-lg hover:bg-stone-100 text-stone-800 flex items-center justify-between">
+                    <span>Resume</span>
+                    <span class="font-mono text-xs text-stone-500">PDF</span>
+                </a>
+                <a href="#contact" class="craft-btn-primary text-center px-4 py-2.5 rounded-xl text-xs font-semibold mt-2">
+                    Get in Touch
+                </a>
             </div>
         </div>
+    </header>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden sm:hidden bg-white border-t border-gray-200">
-            <div class="pt-2 pb-3 space-y-1">
-                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 transition duration-300">About</a>
-                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 transition duration-300">Skills</a>
-                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 transition duration-300">Projects</a>
-                <a href="#contact" class="block w-full text-center px-4 py-3 bg-primary text-white font-semibold hover:bg-emerald-600 transition duration-300 mt-2">Get in Touch</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- MAIN CONTENT SECTIONS -->
-    <main class="py-12">
+    <!-- MAIN CONTENT -->
+    <main>
         
         <!-- 
             HERO SECTION 
-            The introduction and main call-to-action
-        -->     
-        <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 text-center">
-            <div class="fade-in-on-load">
-                
-                <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl mb-4">
-                    Hi, I'm <span class="text-primary">Mark Fedio</span>
-                </h1>
-                <p class="mt-3 max-w-3xl mx-auto text-xl text-gray-500 sm:text-2xl">
-                    Junior at Tufts University studying Computer Science
-                </p>
-                <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border border-gray-300 text-base font-medium rounded-full shadow-lg text-gray-700 bg-secondary hover:bg-gray-300 transition duration-300">
-                        View My Work <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-                    </a>
-                    <a href="mailto:markcfedio@gmail.com" class="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-full text-gray-700 bg-white hover:bg-gray-300 transition duration-300 shadow-md">
-                        Email Me <i data-lucide="mail" class="ml-2 w-5 h-5"></i>
-                    </a>
+        -->
+        <section id="hero" class="max-w-5xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-20 text-center">
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-medium bg-stone-100 border border-stone-200 text-stone-700 shadow-sm mb-6">
+                <span class="w-2 h-2 rounded-full bg-forest-800 animate-pulse"></span>
+                <span>Tufts University '28 &bull; BS Computer Science, AI Development Minor, Graduate Certificate in Business</span>
+            </div>
+
+            <!-- Big Confident Headline -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-stone-900 leading-[1.1] mb-6">
+                Engineering precision in <br class="hidden sm:inline">
+                <span class="text-forest-800">software</span> &amp; <span class="font-serif font-normal text-timber-600">physical craft</span>.
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-stone-600 leading-relaxed font-normal mb-10">
+                Hi, I'm <strong class="text-stone-900 font-semibold">Mark Fedio</strong>. I'm a junior studying Computer Science at Tufts University's School of Engineering. I have extensive professional and academic experience in Software Development, ETL Pipelines, and Data Analytics. 
+                In my free time, I build with, wood, acrylic, and more. <br><br>Check out some of the projects I'm proud of below.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-xl mx-auto">
+                <a href="#software-projects" class="w-full sm:w-auto craft-btn-primary px-6 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 shadow-sm">
+                    <span>Explore My Work</span>
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </a>
+                <a href="MarkFedioResume.pdf" target="_blank" class="w-full sm:w-auto craft-btn-secondary px-6 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 shadow-sm">
+                    <i data-lucide="download" class="w-4 h-4 text-stone-500"></i>
+                    <span>Download Resume</span>
+                </a>
+                <a href="mailto:markcfedio@gmail.com" class="w-full sm:w-auto craft-btn-secondary px-6 py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4 text-stone-500"></i>
+                    <span>Email Me</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 
+            TECHNICAL TOOLKIT SECTION 
+        -->
+        <section id="skills" class="py-20 border-t border-stone-200/80">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <div class="inline-flex items-center space-x-2 mb-3">
+                        <span class="w-4 h-px bg-forest-800"></span>
+                        <span class="font-mono text-xs uppercase tracking-widest text-forest-800 font-semibold">Capabilities</span>
+                        <span class="w-4 h-px bg-forest-800"></span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
+                        My Technical Toolkit
+                    </h2>
+                    <p class="text-stone-500 text-sm mt-2">Tools, systems, and craft disciplines I leverage daily.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <!-- Languages -->
+                    <div class="craft-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-forest-800 mb-4 border border-stone-200/80">
+                                <i data-lucide="terminal" class="w-4 h-4"></i>
+                            </div>
+                            <h3 class="font-bold text-stone-900 text-base mb-3">Languages</h3>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Python</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">C++</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">C</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Java</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Swift</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">SQL</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">JavaScript</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">HTML/CSS</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">R</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libraries & Frameworks -->
+                    <div class="craft-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-forest-800 mb-4 border border-stone-200/80">
+                                <i data-lucide="cpu" class="w-4 h-4"></i>
+                            </div>
+                            <h3 class="font-bold text-stone-900 text-base mb-3">Libraries</h3>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">LLMs</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Pandas</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Scikit-Learn</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">OpenCV</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">PyMuPDF</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Requests</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Pygame</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div class="craft-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-forest-800 mb-4 border border-stone-200/80">
+                                <i data-lucide="cloud" class="w-4 h-4"></i>
+                            </div>
+                            <h3 class="font-bold text-stone-900 text-base mb-3">Platforms</h3>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Git</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">REST APIs</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Azure</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">MongoDB</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">MySQL</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Mixpanel</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Salesforce</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">VS Code</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Concepts -->
+                    <div class="craft-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-forest-800 mb-4 border border-stone-200/80">
+                                <i data-lucide="layers" class="w-4 h-4"></i>
+                            </div>
+                            <h3 class="font-bold text-stone-900 text-base mb-3">Core CS</h3>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Data Structures</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Algorithms</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">OOP</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">ML/AI</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">ETL</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Cloud Arch</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Agile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fabrication -->
+                    <div class="craft-card rounded-2xl p-5 flex flex-col justify-between border-stone-300">
+                        <div>
+                            <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-timber-600 mb-4 border border-stone-200/80">
+                                <i data-lucide="hammer" class="w-4 h-4"></i>
+                            </div>
+                            <h3 class="font-bold text-stone-900 text-base mb-3">Fabrication</h3>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">CAD</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Prusa Slicer</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">3D Printing</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Inkscape</span>
+                                <span class="font-mono text-xs px-2 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200/60">Woodworking</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- 
-            ABOUT ME SECTION 
-            Detail your experience, education, and personality
+            SOFTWARE PROJECTS SECTION 
         -->
-        <section id="about" class="bg-white py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <span class="text-primary text-sm font-semibold uppercase tracking-wider">Who I Am</span>
-                </div>
-                <div class="max-w-4xl mx-auto text-lg space-y-6">
-                    <p>
-                        I am a highly motivated junior studying computer science in Tufts University's School of Engineering. 
-                        My core curriculum has focused on C and C++, and I've taken electives that have taught me HTML, CSS, 
-                        Javascript, and Python, the first three of which I'm using to help me create this very site! 
-                        I have a passion for using computer science to solve problems, and I'm always expanding my knowledge.
-                        In my free time, I use my problem-solving skills and creativity in physical mediums as well.  
-                    </p>
-                    <p class="text-primary font-medium">
-                        I am currently seeking opportunities to apply my knowledge in challenging roles where I can contribute to meaningful projects and continue my development as an engineer.
-                    </p>
-                    
-                    <div class="pt-6">
-                        <a href="MarkFedioResume.pdf" target="_blank" class="inline-flex items-center text-sm font-medium text-primary hover:text-emerald-600 transition duration-300">
-                            Download Full Resume <i data-lucide="download" class="ml-2 w-4 h-4"></i>
-                        </a>
+        <section id="software-projects" class="py-24 border-t border-stone-200/80 bg-stone-100/60">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <!-- Section Header -->
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-4">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
+                            Software Projects
+                        </h2>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <span class="text-primary text-sm font-semibold uppercase tracking-wider">Expertise</span>
-                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        My Technical Toolkit
-                    </h2>
+                    <span class="font-mono text-xs text-stone-500">SWE &bull; Algorithms &bull; Games</span>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
-                    <!-- Skill Item 1: Languages -->
-                    <div class="flex flex-col items-center bg-white p-5 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
-                        <i data-lucide="terminal" class="w-8 h-8 text-primary mb-3"></i>
-                        <h3 class="text-base font-semibold text-gray-800 text-center">Languages</h3>
-                        <div class="flex flex-wrap justify-center gap-1.5 mt-3">
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Python</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">C++</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">C</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Java</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Swift</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">SQL</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">JavaScript</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">HTML/CSS</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">R</span>
-                        </div>
-                    </div>
-                    <!-- Skill Item 2: Libraries & Frameworks -->
-                    <div class="flex flex-col items-center bg-white p-5 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
-                        <i data-lucide="cpu" class="w-8 h-8 text-primary mb-3"></i>
-                        <h3 class="text-base font-semibold text-gray-800 text-center">Libraries & Frameworks</h3>
-                        <div class="flex flex-wrap justify-center gap-1.5 mt-3">
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">LLMs</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Pandas</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">OpenCV</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">PyMuPDF</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Requests</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Pygame</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Pybaseball</span>
-                        </div>
-                    </div>
-                    <!-- Skill Item 3: Tools & Platforms -->
-                    <div class="flex flex-col items-center bg-white p-5 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
-                        <i data-lucide="cloud" class="w-8 h-8 text-primary mb-3"></i>
-                        <h3 class="text-base font-semibold text-gray-800 text-center">Tools & Platforms</h3>
-                        <div class="flex flex-wrap justify-center gap-1.5 mt-3">
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Git</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">REST APIs</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Microsoft Azure</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">MongoDB</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">MySQL</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Mixpanel</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Salesforce</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">VS Code</span>
-                        </div>
-                    </div>
-                    <!-- Skill Item 4: Core Concepts -->
-                    <div class="flex flex-col items-center bg-white p-5 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
-                        <i data-lucide="layers" class="w-8 h-8 text-primary mb-3"></i>
-                        <h3 class="text-base font-semibold text-gray-800 text-center">Core Concepts</h3>
-                        <div class="flex flex-wrap justify-center gap-1.5 mt-3">
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Data Structures</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Algorithms</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">OOP</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">ETL Pipelines</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Cloud Architecture</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Optimization</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Agile</span>
-                        </div>
-                    </div>
-                    <!-- Skill Item 5: Fabrication -->
-                    <div class="flex flex-col items-center bg-white p-5 rounded-xl shadow-lg border border-gray-200 transition duration-300 hover:border-primary">
-                        <i data-lucide="hammer" class="w-8 h-8 text-primary mb-3"></i>
-                        <h3 class="text-base font-semibold text-gray-800 text-center">Fabrication</h3>
-                        <div class="flex flex-wrap justify-center gap-1.5 mt-3">
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">CAD</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Prusa Slicer</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">3D Printing</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Inkscape</span>
-                            <span class="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-md">Woodworking</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="bg-gray-50 py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-primary text-sm font-semibold uppercase tracking-wider">My Portfolio</span>
-                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        Featured Projects
-                    </h2>
-                </div>
-
-                <div class="space-y-16">
+                <div class="space-y-12">
                     <!-- Project 1: Chess -->
-                    <div class="project-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
-                        <div class="md:w-1/2 p-6 md:p-12 space-y-4">
-                            <h3 class="text-2xl font-bold text-gray-900">Chess</h3>
-                            <p class="text-gray-500">
-                                Personal Project
-                            </p>
-                            <p class="text-gray-700">
-                                Engineered a complete, playable chess application from scratch using Python and Pygame. Leveraged object-oriented programming to efficiently manage complex game state, enforce strict rules (including castling and checkmate), and handle piece logic. Compiled to WebAssembly using Pygbag for native browser play. No AI used.
-                            </p>
-                            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                <li>Python & Pygame</li>
-                                <li>WebAssembly (Pygbag) Deployment</li>
-                            </ul>
-                            <div class="pt-4 flex space-x-4">
-                                <a href="chess/index.html" target="_blank" class="text-primary font-semibold hover:text-emerald-600 flex items-center transition duration-300">
-                                    Play in Browser <i data-lucide="play-circle" class="ml-2 w-4 h-4"></i>
+                    <div class="craft-card rounded-2xl overflow-hidden md:flex">
+                        <div class="md:w-1/2 p-7 sm:p-10 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-mono text-xs text-forest-800 uppercase tracking-wider font-semibold">Personal Project</span>
+                                    <span class="font-mono text-xs text-stone-400">Python</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-stone-900 mb-3">Pygame Chess</h3>
+                                <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+                                    Engineered a complete, playable chess application from scratch using Python and Pygame. Leveraged object-oriented programming to efficiently manage complex game state, enforce strict rules (including castling and checkmate), and handle piece logic. Compiled to WebAssembly using Pygbag for native browser play with another person, or an engine available to play through the GitHub Repo. No AI used.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-8">
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Python &amp; Pygame</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">WebAssembly (Pygbag)</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">OOP</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-4 border-t border-stone-100">
+                                <a href="chess/index.html" target="_blank" class="craft-btn-primary px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-2">
+                                    <span>Play in Browser</span>
+                                    <i data-lucide="play-circle" class="w-4 h-4"></i>
                                 </a>
-                                <a href="https://github.com/MarkFedio/chess/blob/main/README.md" target="_blank" class="text-gray-600 font-semibold hover:text-gray-900 flex items-center transition duration-300">
-                                    GitHub Repo <i data-lucide="github" class="ml-2 w-4 h-4"></i>
+                                <a href="https://github.com/MarkFedio/chess/blob/main/README.md" target="_blank" class="text-xs font-semibold text-stone-600 hover:text-stone-900 flex items-center gap-1.5 transition-colors">
+                                    <i data-lucide="github" class="w-4 h-4"></i>
+                                    <span>GitHub Repo</span>
                                 </a>
                             </div>
                         </div>
-                        <div class="md:w-1/2 overflow-hidden h-64 md:h-96 flex items-center justify-center">
-                            <img class="w-full h-full object-cover block" 
+                        <div class="md:w-1/2 bg-[#F2EDE4] p-6 sm:p-10 flex items-center justify-center border-t md:border-t-0 md:border-l border-stone-200/80">
+                            <img class="max-h-72 w-auto object-contain drop-shadow-md rounded-xl transition-transform duration-500 hover:scale-[1.02]" 
                                  src="chess.png" 
                                  alt="Python Chess App">
                         </div>
                     </div>
 
-                    <!-- Project 2 (Updated to flex-row-reverse for alternating layout) -->
-                    <div class="project-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex md:flex-row-reverse">
-                        <div class="md:w-1/2 p-6 md:p-12 space-y-4">
-                            <h3 class="text-2xl font-bold text-gray-900">Wooden Wristwatch</h3>
-                            <p class="text-gray-500">
-                                Hobby Project
-                            </p>
-                            <p class="text-gray-700">
-                                My custom wristwatch made out of wood. This project was almost entirely new territory for me,
-                                but I love how it came out.
-                            </p>
-                            <br>
-                            <br>
-                            <div class="pt-4 flex space-x-4">
-                                <a href="watchPictures.html" target="_self" class="text-primary font-semibold hover:text-emerald-600 flex items-center transition duration-300">
-                                    Documentation <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                    <!-- Project 2: Modified Grep Linux Command -->
+                    <div class="craft-card rounded-2xl overflow-hidden md:flex md:flex-row-reverse">
+                        <div class="md:w-1/2 p-7 sm:p-10 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-mono text-xs text-forest-800 uppercase tracking-wider font-semibold">CS15: Data Structures</span>
+                                    <span class="font-mono text-xs text-stone-400">C++</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-stone-900 mb-3">Modified Grep Command</h3>
+                                <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+                                    A modified recreation of the Linux Grep Command. This program traverses a directory of text files and lets the user query words across files. The program indexes occurrences with high efficiency, reporting line numbers and source file locations.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-8">
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">C++</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Custom Hash Map</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">File I/O</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Systems</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-4 border-t border-stone-100">
+                                <a href="gerpDocumentation.html" target="_self" class="craft-btn-primary px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-2">
+                                    <span>Read Documentation</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                                <a href="mailto:markcfedio@gmail.com" target="_self" class="text-xs font-semibold text-stone-600 hover:text-stone-900 flex items-center gap-1.5 transition-colors">
+                                    <i data-lucide="mail" class="w-4 h-4"></i>
+                                    <span>Source on Request</span>
                                 </a>
                             </div>
                         </div>
-                        <div class="md:w-1/2 overflow-hidden h-64 md:h-96 flex items-center justify-center">
-                            <img class="w-full h-full object-cover block" 
-                                 src="watchImage1.jpg">
-                        </div>
-                    </div>
-
-                    <!-- Project 3 (Updated to standard flex for alternating layout) -->
-                    <div class="project-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
-                        <div class="md:w-1/2 p-6 md:p-12 space-y-4">
-                            <h3 class="text-2xl font-bold text-gray-900">Modified Grep Linux Command</h3>
-                            <p class="text-gray-500">
-                                CS15: Data Structures and Algorithms --- Final Project
-                            </p>
-                            <p class="text-gray-700">
-                                A modified recreation of the Linux Grep Command. This program takes in a directory of text files and lets
-                                the user query words from those files. The program writes to an output file all instances of the queried word
-                                and the line number and files in which they were found.
-                            </p>
-                            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                <li>Custom Hash Map Interface</li>
-                                <li>File I/O</li>
-                            </ul>
-                            <div class="pt-4 flex space-x-4">
-                                <a href="gerpDocumentation.html" target="_self" class="text-primary font-semibold hover:text-emerald-600 flex items-center transition duration-300">
-                                    Documentation <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
-                                </a>
-                                <a href="mailto:markcfedio@gmail.com" target="_self" class="text-gray-600 font-semibold hover:text-gray-900 flex items-center transition duration-300">
-                                    Source Code Available On Request <i data-lucide="mail" class="ml-2 w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="md:w-1/2 overflow-hidden h-64 md:h-96 flex items-center justify-center">
-                            
-                            <img class="w-full h-full object-cover block" 
+                        <div class="md:w-1/2 bg-[#F2EDE4] p-6 sm:p-10 flex items-center justify-center border-t md:border-t-0 md:border-r border-stone-200/80">
+                            <img class="max-h-56 w-auto object-contain drop-shadow-sm transition-transform duration-500 hover:scale-[1.03]" 
                                  src="c++Logo.png" 
-                                 alt="c++Logo">
+                                 alt="C++ Logo">
                         </div>
                     </div>
                     
-                    <!-- Project 4 (Updated to flex-row-reverse for alternating layout) -->
-                    <div class="project-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex md:flex-row-reverse">
-                        <div class="md:w-1/2 p-6 md:p-12 space-y-4">
-                            <h3 class="text-2xl font-bold text-gray-900">PPM Compression Program</h3>
-                            <p class="text-gray-500">
-                                CS40: Machine Structures --- Midterm Project
-                            </p>
-                            <p class="text-gray-700">
-                                This program compresses a supplied .ppm image (and likewise can decompress a supplied compressed image)
-                                to roughly 1/3rd of the original file size while maintaining ~95% of image data upon decompression.
-                            </p>
-                            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                <li>Bit Packing</li>
-                                <li>Discrete Cosine Transformations and Linear Quantization</li>
-                            </ul>
-                            <div class="pt-4 flex space-x-4">
-                                <a href="ppmCompressionDocumentation.html" target="_self" class="text-primary font-semibold hover:text-emerald-600 flex items-center transition duration-300">
-                                    Documentation <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                    <!-- Project 3: PPM Compression Program -->
+                    <div class="craft-card rounded-2xl overflow-hidden md:flex">
+                        <div class="md:w-1/2 p-7 sm:p-10 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-mono text-xs text-forest-800 uppercase tracking-wider font-semibold">CS40: Machine Structures</span>
+                                    <span class="font-mono text-xs text-stone-400">Midterm Project</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-stone-900 mb-3">PPM Lossy Image Compression</h3>
+                                <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+                                    Compresses a supplied .ppm image (and decompresses compressed artifacts) to approximately 1/3rd of the original file size while preserving ~95% visual fidelity upon decompression using discrete cosine transforms and 32-bit word packing.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-8">
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">C</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Bit Packing</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">DCT</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Quantization</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-4 border-t border-stone-100">
+                                <a href="ppmCompressionDocumentation.html" target="_self" class="craft-btn-primary px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-2">
+                                    <span>Read Documentation</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
                                 </a>
-                                <a href="mailto:markcfedio@gmail.com" target="_self" class="text-gray-600 font-semibold hover:text-gray-900 flex items-center transition duration-300">
-                                    Source Code Available On Request <i data-lucide="mail" class="ml-2 w-4 h-4"></i>
+                                <a href="mailto:markcfedio@gmail.com" target="_self" class="text-xs font-semibold text-stone-600 hover:text-stone-900 flex items-center gap-1.5 transition-colors">
+                                    <i data-lucide="mail" class="w-4 h-4"></i>
+                                    <span>Source on Request</span>
                                 </a>
                             </div>
                         </div>
-                        <div class="md:w-1/2 overflow-hidden h-64 md:h-96 flex items-center justify-center">
-                            <img class="w-full h-full object-cover block" 
-                                 src="cLogo.png">
+                        <div class="md:w-1/2 bg-[#F2EDE4] p-6 sm:p-10 flex items-center justify-center border-t md:border-t-0 md:border-l border-stone-200/80">
+                            <img class="max-h-56 w-auto object-contain drop-shadow-sm transition-transform duration-500 hover:scale-[1.03]" 
+                                 src="cLogo.png"
+                                 alt="C Language Logo">
                         </div>
                     </div>
-
-                    
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT STUFF -->
-        <section id="contact" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <span class="text-primary text-sm font-semibold uppercase tracking-wider">Let's Connect</span>
-                    <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        I'm currently open to new opportunities.
-                    </h2>
-                    
-                </div>
-                    <div class="mt-8 pt-6 border-t border-gray-100 text-center">
-                        <p class="text-lg font-mono text-gray-800">markcfedio@gmail.com</p>
-                        <p class="mt-4 flex justify-center space-x-6">
-                            <a href="https://linkedin.com/in/markfedio" target="_blank" class="text-gray-600 hover:text-primary transition duration-300"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                        </p>
+        <!-- 
+            PHYSICAL & FABRICATION PROJECTS SECTION 
+        -->
+        <section id="physical-projects" class="py-24 border-t border-stone-200/80 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                <!-- Section Header -->
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
+                            Physical Projects
+                        </h2>
                     </div>
+                    <span class="font-mono text-xs text-stone-500">Woodworking &bull; CAD &bull; Passion </span>
+                </div>
+
+                <!-- Philosophy / Why Physical Works Matter Blurb -->
+                <div class="craft-card rounded-2xl p-6 sm:p-8 mb-12 bg-stone-50/70 border border-stone-200/90">
+                    <div class="flex items-center gap-2.5 mb-3 text-timber-600">
+                        <i data-lucide="compass" class="w-4 h-4"></i>
+                        <span class="font-mono text-xs uppercase tracking-wider font-semibold">Bridging Profession &amp; Passion</span>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-stone-900 mb-2">
+                        Why Physical Engineering Belongs on a Software Site
+                    </h3>
+                    <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+                        I'm a firm believer that computer science is engineering first and foremost. Engineers are tasked with using their hard and soft skills to solve problems.
+                        The medium in which us software engineers approach those problems (code) does not change that. When I build the projects presented below, I approach them in the same way I approach a software project:
+                        I identify a problem/task, I create a plan, and I relentlessly work toward a final product I'm proud of. 
+                        My physical projects have honed my problem-solving, creative-thinking, prototyping, and debugging, as well as my discipline, ability to pivot, and knack for learning from failure.
+                        These are not computer science skills; they are engineering skills.
+                    
+                    </p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Physical Project 1: Wooden Timepieces -->
+                    <div class="craft-card rounded-2xl overflow-hidden md:flex">
+                        <div class="md:w-1/2 p-7 sm:p-10 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-mono text-xs text-timber-600 uppercase tracking-wider font-semibold">Micro-Machining &amp; Horology</span>
+                                    <span class="font-mono text-xs text-stone-400">3 Editions</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-stone-900 mb-3">Custom Wooden Timepieces</h3>
+                                <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+                                    Custom handmade wristwatches engineered from hardwood and acrylic with laser cutting, 3D-printed internal housings, drill jigs, and precision quartz movements. Features three timepiece editions with detailed build process documentation.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-8">
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Woodworking</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">CAD</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Micro-Machining</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Horology</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-stone-100">
+                                <a href="watch/watchPictures.html" target="_self" class="craft-btn-primary px-5 py-2.5 rounded-lg text-xs font-semibold inline-flex items-center gap-2">
+                                    <span>View Collection &amp; Build Logs</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Watch 3-Thumbnail Showcase Frame -->
+                        <div class="md:w-1/2 p-4 sm:p-6 bg-[#F4EFE6] border-t md:border-t-0 md:border-l border-stone-200/80 flex items-center justify-center">
+                            <div class="grid grid-cols-3 gap-3 w-full h-72 sm:h-80">
+                                <!-- Watch 1: Light Wood -->
+                                <a href="watch/watchPictures.html" class="group relative rounded-xl overflow-hidden bg-white border border-stone-200/90 shadow-sm flex items-center justify-center p-2 transition-all hover:border-stone-400">
+                                    <!-- 
+                                        MANUAL SIZE ADJUSTMENT FOR WATCH 1:
+                                        Adjust 'scale(0.82)' below (e.g. 0.80 for 80%, 0.85 for 85%, 0.90 for 90%)
+                                        until the watch body matches Watch 2 and Watch 3.
+                                        This scales across mobile, tablet, and desktop screens.
+                                    -->
+                                    <div class="w-full h-full flex items-center justify-center transition duration-300 group-hover:scale-105">
+                                        <img class="max-h-full max-w-full object-contain" 
+                                             style="transform: scale(1.32); transform-origin: center;"
+                                             src="watch/watch1_thumb.jpg" 
+                                             alt="Watch 1: Light Wood">
+                                    </div>
+                                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-stone-900/90 via-stone-900/50 to-transparent p-2 text-center pointer-events-none">
+                                        <span class="text-white text-xs font-bold block">Watch 1</span>
+                                        <span class="text-[10px] text-amber-200 font-mono">Light Wood</span>
+                                    </div>
+                                </a>
+                                <!-- Watch 2: Dark Wood -->
+                                <a href="watch/watchPictures.html" class="group relative rounded-xl overflow-hidden bg-white border border-stone-200/90 shadow-sm flex items-center justify-center p-2 transition-all hover:border-stone-400">
+                                    <div class="w-full h-full flex items-center justify-center transition duration-300 group-hover:scale-105">
+                                        <img class="max-h-full max-w-full object-contain" 
+                                             src="watch/watch2.jpg" 
+                                             alt="Watch 2: Dark Wood">
+                                    </div>
+                                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-stone-900/90 via-stone-900/50 to-transparent p-2 text-center pointer-events-none">
+                                        <span class="text-white text-xs font-bold block">Watch 2</span>
+                                        <span class="text-[10px] text-amber-200 font-mono">Dark Wood</span>
+                                    </div>
+                                </a>
+                                <!-- Watch 3: Acrylic -->
+                                <a href="watch/watchPictures.html" class="group relative rounded-xl overflow-hidden bg-white border border-stone-200/90 shadow-sm flex items-center justify-center p-2 transition-all hover:border-stone-400">
+                                    <div class="w-full h-full flex items-center justify-center transition duration-300 group-hover:scale-105">
+                                        <img class="max-h-full max-w-full object-contain" 
+                                             src="watch/watch3.jpg" 
+                                             alt="Watch 3: Acrylic & Modular Bracelets">
+                                    </div>
+                                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-stone-900/90 via-stone-900/50 to-transparent p-2 text-center pointer-events-none">
+                                        <span class="text-white text-xs font-bold block">Watch 3</span>
+                                        <span class="text-[10px] text-amber-200 font-mono">Acrylic</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Physical Project 2: Wooden Hat Rack -->
+                    <div class="craft-card rounded-2xl overflow-hidden md:flex md:flex-row-reverse">
+                        <div class="md:w-1/2 p-7 sm:p-10 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-mono text-xs text-timber-600 uppercase tracking-wider font-semibold">Woodworking &amp; Functional Design</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-stone-900 mb-3">Handcrafted Wooden Hat Rack</h3>
+                                <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+                                    A custom wall-mounted wooden hat rack combining functional design and traditional woodworking. Features completed multi-angle build photo and an in-progress video walkthrough capturing the fabrication process.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-8">
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Woodworking</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Joinery</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Finish Carpentry</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Video Showcase</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-stone-100">
+                                <a href="hatRack/hatRack.html" target="_self" class="craft-btn-primary px-5 py-2.5 rounded-lg text-xs font-semibold inline-flex items-center gap-2">
+                                    <span>View Build &amp; Video Showcase</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 bg-[#F4EFE6] p-6 sm:p-8 flex items-center justify-center border-t md:border-t-0 md:border-r border-stone-200/80">
+                            <img class="max-h-72 w-auto object-contain drop-shadow-md rounded-xl transition-transform duration-500 hover:scale-[1.02]" 
+                                 src="hatRack/hatRack.jpg" 
+                                 alt="Handcrafted Wooden Hat Rack">
+                        </div>
+                    </div>
+
+                    <!-- Physical Project 3: Prime American Flag -->
+                    <div class="craft-card rounded-2xl overflow-hidden md:flex">
+                        <div class="md:w-1/2 p-7 sm:p-10 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="font-mono text-xs text-timber-600 uppercase tracking-wider font-semibold">Woodworking &amp; Decoration</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-stone-900 mb-3">Prime American Flag</h3>
+                                <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+                                    A creative pop-art wall sculpture reconstructing the American flag out of Prime Hydration bottles mounted inside a custom handcrafted wooden frame with precision joinery and finishing.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-8">
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Woodworking</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Joinery</span>
+                                    <span class="font-mono text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">Finish Carpentry</span>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-stone-100">
+                                <a href="primeFlag/primeFlag.html" target="_self" class="craft-btn-primary px-5 py-2.5 rounded-lg text-xs font-semibold inline-flex items-center gap-2">
+                                    <span>View Build &amp; Story</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 bg-[#F4EFE6] p-6 sm:p-8 flex items-center justify-center border-t md:border-t-0 md:border-l border-stone-200/80">
+                            <img class="max-h-72 w-auto object-contain drop-shadow-md rounded-xl transition-transform duration-500 hover:scale-[1.02]" 
+                                 src="primeFlag/primeFlag.jpg" 
+                                 alt="Prime American Flag">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            CONTACT SECTION 
+        -->
+        <section id="contact" class="py-24 border-t border-stone-200/80 bg-stone-900 text-stone-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+                <div class="inline-flex items-center space-x-2 mb-4">
+                    <span class="w-4 h-px bg-forest-100"></span>
+                    <span class="font-mono text-xs uppercase tracking-widest text-emerald-400 font-semibold">Let's Connect</span>
+                    <span class="w-4 h-px bg-forest-100"></span>
+                </div>
+                
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-6">
+                    Open to new engineering challenges.
+                </h2>
+                
+                <p class="max-w-xl mx-auto text-stone-400 text-base sm:text-lg mb-10 leading-relaxed">
+                    Whether you're looking for an engineer for systems development, internships, or want to discuss physical fabrication, my inbox is always open.
+                </p>
+
+                <!-- Direct Email Badge -->
+                <div class="inline-flex flex-col sm:flex-row items-center gap-3 p-2 bg-stone-800/80 rounded-2xl border border-stone-700/80 mb-10">
+                    <a href="mailto:markcfedio@gmail.com" class="font-mono text-base sm:text-lg text-emerald-300 hover:text-white px-5 py-2 transition-colors">
+                        markcfedio@gmail.com
+                    </a>
+                    <a href="mailto:markcfedio@gmail.com" class="bg-forest-800 hover:bg-forest-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors">
+                        Send Email &rarr;
+                    </a>
+                </div>
+
+                <!-- Socials & Links -->
+                <div class="flex items-center justify-center space-x-6 pt-6 border-t border-stone-800">
+                    <a href="https://linkedin.com/in/markfedio" target="_blank" class="text-stone-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <span class="text-stone-700">&bull;</span>
+                    <a href="https://github.com/MarkFedio" target="_blank" class="text-stone-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <span class="text-stone-700">&bull;</span>
+                    <a href="MarkFedioResume.pdf" target="_blank" class="text-stone-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+                        <i data-lucide="file-text" class="w-5 h-5"></i>
+                        <span>Resume</span>
+                    </a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    
-    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <!-- FOOTER -->
+    <footer class="bg-stone-950 py-8 px-4 text-center border-t border-stone-900 text-stone-500 text-xs font-mono">
+        <p>&copy; 2026 Mark Fedio</p>
+    </footer>
+
+    <!-- INTERACTIVITY JAVASCRIPT -->
     <script>
         // 1. Initialize Lucide Icons
-        // Renders the icons on the page
         lucide.createIcons();
 
         // 2. Mobile Menu Toggle Logic
@@ -397,51 +713,20 @@
         const menuIcon = document.getElementById('menu-icon');
         const closeIcon = document.getElementById('close-icon');
 
-        mobileMenuButton.addEventListener('click', () => {
-            const isMenuOpen = mobileMenu.classList.toggle('hidden');
-            menuIcon.classList.toggle('hidden', !isMenuOpen);
-            closeIcon.classList.toggle('hidden', isMenuOpen);
-        });
-        
-        // Close menu when a link is clicked (for smooth scrolling)
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden', !isHidden);
+                closeIcon.classList.toggle('hidden', isHidden);
             });
-        });
 
-
-        // 3. Simple Contact Form Handling (Prevents default submission)
-        // NOTE: A real portfolio would need a backend service (like Formspree or a serverless function)
-        // to actually send this email. This front-end code only provides visual feedback.
-        const contactForm = document.getElementById('contactForm');
-        const contactMessage = document.getElementById('contactMessage');
-
-        // Form check (if the form element exists, add the listener to prevent errors if the form was removed from the html)
-        if(contactForm){
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault(); 
-                
-                // Show loading state
-                const submitButton = contactForm.querySelector('button[type="submit"]');
-                submitButton.textContent = 'Sending...';
-                submitButton.disabled = true;
-
-                // Simulate form submission success
-                setTimeout(() => {
-                    submitButton.textContent = 'Send Message';
-                    submitButton.disabled = false;
-                    
-                    // Show success message
-                    contactMessage.textContent = 'Thank you! Your message has been noted. I will be in touch shortly.';
-                    contactMessage.className = 'mt-4 text-center text-sm font-medium p-3 rounded-lg bg-green-100 text-primary transition duration-300';
-                    contactMessage.classList.remove('hidden');
-
-                    // Clear the form fields
-                    contactForm.reset();
-                }, 1500); // Wait 1.5 seconds to simulate network delay
+            // Close menu when a link is clicked
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
             });
         }
     </script>

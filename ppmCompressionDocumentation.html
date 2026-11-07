@@ -4,141 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPM Compression Program | Mark Fedio</title>
+    
+    <!-- Custom Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+    <link rel="icon" type="image/png" href="favicon.png?v=3" sizes="64x64">
+    <link rel="shortcut icon" href="favicon.ico?v=3">
+    <link rel="apple-touch-icon" href="favicon.png?v=3">
+    
+    <!-- Google Fonts: Plus Jakarta Sans, Newsreader, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Newsreader"', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#FAF8F5',
+                            100: '#F4F0E8',
+                            200: '#E7E2D7',
+                            300: '#D5CEC0',
+                            400: '#A8A29E',
+                            500: '#78716C',
+                            600: '#57534E',
+                            700: '#44403C',
+                            800: '#292524',
+                            900: '#1C1917',
+                        },
+                        forest: {
+                            50: '#F2F7F4',
+                            100: '#E2EFE7',
+                            700: '#24523E',
+                            800: '#1E3A2F',
+                            900: '#142A22',
+                        },
+                        timber: {
+                            500: '#A36838',
+                            600: '#8A5228',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
     <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
     <style>
-        :root {
-            --primary-color: #10B981; /* Emerald Green */
-            --secondary-color: #1F2937; /* Dark Gray/Slate */
-            --text-color: #374151; /* Medium Gray */
+        html {
+            scroll-behavior: smooth;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-            background-color: #F9FAFB;
+            background-color: #FAF8F5;
+            color: #44403C;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
-        .text-primary { color: var(--primary-color); }
-        .bg-primary { background-color: var(--primary-color); }
-
-        /* Style for the captioned image blocks */
-        .image-block {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid #E5E7EB;
+        .warm-canvas {
+            background-color: #FAF8F5;
+            background-image: radial-gradient(rgba(180, 160, 135, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
         }
-        /* Ensure image fills container while maintaining aspect ratio */
-        .image-block img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .craft-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E7E2D7;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .craft-card:hover {
+            border-color: #D5CEC0;
+            box-shadow: 0 14px 28px -6px rgba(28, 25, 23, 0.07);
+        }
+        .craft-btn-primary {
+            background-color: #1E3A2F;
+            color: #FAF8F5;
+            transition: all 0.2s ease;
+        }
+        .craft-btn-primary:hover {
+            background-color: #142A22;
+        }
+        .floating-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background-color: rgba(250, 248, 245, 0.85);
+            border: 1px solid rgba(231, 226, 215, 0.85);
+            box-shadow: 0 10px 25px -5px rgba(28, 25, 23, 0.05);
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="warm-canvas min-h-screen text-stone-700">
 
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-gray-900 transition duration-300 hover:text-primary flex items-center">
-                <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i> Back to Portfolio
+    <!-- FLOATING NAV -->
+    <header class="sticky top-4 z-50 px-4 sm:px-6 max-w-5xl mx-auto">
+        <nav class="floating-nav rounded-full px-5 py-3 flex items-center justify-between">
+            <a href="index.html#software-projects" class="group flex items-center space-x-2 text-sm font-semibold text-stone-800 hover:text-forest-800 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
+                <span>Back to Portfolio</span>
             </a>
-            <div class="text-gray-700">
-                <span class="text-sm font-semibold">Mark Fedio</span>
+            <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-forest-800"></span>
+                <span class="text-xs font-mono font-medium text-stone-500">C Architecture &bull; Mark Fedio</span>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <main class="py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
             
             <!-- PROJECT TITLE & SUMMARY -->
-            <header class="mb-12 text-center">
-                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl mb-4">
-                        PPM Compression Program
+            <header class="mb-14 text-center">
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <span class="font-mono text-xs px-3 py-1 rounded-full bg-stone-100 text-forest-800 border border-stone-200 uppercase tracking-wider font-semibold">C &bull; DCT &bull; CS40 Midterm Project</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight mb-4">
+                    PPM Compression Program
                 </h1>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Details about and an example input/output from this program
+                <p class="text-lg sm:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed">
+                    A machine-level lossy image compressor in C achieving 3:1 compression ratios with ~95% fidelity retention.
                 </p>
-               
             </header>
             
             <!-- INTRODUCTION -->
-            <section class="prose max-w-none text-lg leading-relaxed mb-16">
+            <div class="craft-card rounded-2xl p-7 sm:p-9 text-base sm:text-lg leading-relaxed text-stone-600 mb-12">
                 <p>
-                        This was my midterm project for my sophomore year fall semester CS course (CS40: Data Structures).
-                        This C program compressess .ppm images using a discrete cosine transformation, linear quantization,
-                        and bitpacking of 32 bit integers. Compressed image file sizes are around 1/3 of the original, and 
-                        upon decompression an image differs from the original image by only around 5%.
+                    This was my midterm project for my sophomore year fall semester CS course (CS40: Machine Structures).
+                    This C program compresses .ppm images using a discrete cosine transformation, linear quantization,
+                    and bitpacking of 32-bit integers. Compressed image file sizes are around 1/3 of the original, and 
+                    upon decompression an image differs from the original image by only around 5%.
                 </p>
-                
-            </section>
+            </div>
 
-            <!-- Example Input -->
-            <section class="space-y-12">
+            <!-- Example Input & Output Comparison -->
+            <section class="space-y-10">
                 
-                <div class="image-block bg-white rounded-xl overflow-hidden">
-                        <div class="aspect-w-4 aspect-h-3">
-                                <img src="flowers.png" alt="an example input image" class="h-full w-full object-cover">
-                            </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Example Input</h3>
-                        <p class="text-gray-700">
-                               Original Image File Size: 57 KB
+                <div class="craft-card rounded-2xl overflow-hidden">
+                    <div class="bg-[#F4EFE6] flex items-center justify-center p-6 border-b border-stone-200 min-h-[220px]">
+                        <img src="flowers.png" alt="Example input image" class="max-h-64 w-auto object-contain block drop-shadow-md rounded-lg">
+                    </div>
+                    <div class="p-7 sm:p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-mono text-xs text-forest-800 uppercase tracking-wider font-semibold">Source Image</span>
+                            <span class="font-mono text-xs px-2.5 py-1 rounded bg-stone-100 text-stone-700 border border-stone-200">57 KB Uncompressed</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 mb-2">Original .ppm Image</h3>
+                        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+                            The raw image format before transformation and bitpacking. Each pixel contains uncompressed 24-bit RGB values.
                         </p>
                     </div>
                 </div>
 
-                <!--  2: -->
-                <div class="image-block bg-white rounded-xl overflow-hidden">
-                    <div class="aspect-w-4 aspect-h-3">
-                        <img src="flowersDecompressed.png" alt="Example Output" class="h-full w-full object-cover">
+                <div class="craft-card rounded-2xl overflow-hidden">
+                    <div class="bg-[#F4EFE6] flex items-center justify-center p-6 border-b border-stone-200 min-h-[220px]">
+                        <img src="flowersDecompressed.png" alt="Example Output" class="max-h-64 w-auto object-contain block drop-shadow-md rounded-lg">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Example Output</h3>
-                        <p class="text-gray-700">
-                                Compressed Image File Size: 20 KB
+                    <div class="p-7 sm:p-8">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-mono text-xs text-forest-800 uppercase tracking-wider font-semibold">Decompressed Artifact</span>
+                            <span class="font-mono text-xs px-2.5 py-1 rounded bg-forest-50 text-forest-800 border border-forest-100 font-semibold">20 KB (65% Reduction)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 mb-2">Decompressed Output Result</h3>
+                        <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-3">
+                            Compressed image file size: <strong>20 KB</strong>.
                         </p>
-                        <p class="text-gray-700">
-                                Decompressed Image to Original Image Match: 93.4%. Match % found using a program I created
-                                that computes the root mean square difference of pixel values across two images.
-
+                        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+                            Decompressed image to original image match: <strong>93.4%</strong>. The match percentage was verified using a companion program I created that computes the root-mean-square difference of pixel values across both images.
                         </p>
                     </div>
                 </div>                
             </section>
             
             <!-- CONCLUSION & TAKEAWAYS -->
-            <section class="prose max-w-none text-lg leading-relaxed mt-16 pt-8 border-t border-gray-200">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Key CS Concepts</h2>
-                <ul class="list-disc list-inside space-y-2">
-                    <li> 
-                        Bitpacking: Working directly with bit operators in order to optimize storage of data
+            <div class="craft-card rounded-2xl p-7 sm:p-9 mt-12">
+                <h2 class="text-2xl font-bold text-stone-900 mb-6">Key Computer Science Concepts</h2>
+                <ul class="space-y-4 text-stone-600 text-sm sm:text-base leading-relaxed">
+                    <li class="flex items-start gap-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-forest-800 mt-2.5 flex-shrink-0"></span>
+                        <div>
+                            <strong class="text-stone-900 font-semibold">Bitpacking:</strong> Direct manipulation with bitwise operators to pack quantized luminance/chrominance coefficients into single 32-bit machine words for minimal footprint.
+                        </div>
                     </li>
-                    <li> 
-                        Data Representation: Converting from RGB to Component Video and back, and using 2D arrays
-                        to store 2x2 blocks of pixels encoded with Discrete Cosine Transformations that are then packed into a 32
-                        bit integer
-                        
+                    <li class="flex items-start gap-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-forest-800 mt-2.5 flex-shrink-0"></span>
+                        <div>
+                            <strong class="text-stone-900 font-semibold">Data Representation &amp; DCT:</strong> Transforming from RGB color space to Component Video (Y/Pb/Pr), mapping 2x2 blocks with Discrete Cosine Transforms to separate baseline intensity from fine spatial variation.
+                        </div>
                     </li>
-                    <li>
-                        File I/O: Reading and writing .ppm files
+                    <li class="flex items-start gap-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-forest-800 mt-2.5 flex-shrink-0"></span>
+                        <div>
+                            <strong class="text-stone-900 font-semibold">Binary File I/O:</strong> Streaming and parsing raw byte formats across custom binary file layouts.
+                        </div>
                     </li>
                 </ul>
-                <div class="mt-8">
-                    <a href="index.html#projects" class="inline-flex items-center text-primary font-semibold hover:text-emerald-600 transition duration-300">
-                        <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Return to All Projects
+                <div class="mt-8 pt-6 border-t border-stone-100">
+                    <a href="index.html#software-projects" class="craft-btn-primary px-5 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        <span>Return to All Projects</span>
                     </a>
                 </div>
-            </section>
+            </div>
 
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-secondary text-white py-8 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-            <p>&copy; 2025 Mark Fedio. Built with HTML, Tailwind CSS, and a focus on impact.</p>
-        </div>
+    <footer class="bg-stone-950 py-8 px-4 text-center border-t border-stone-900 text-stone-500 text-xs font-mono">
+        <p>&copy; 2026 Mark Fedio &bull; Handcrafted with Code &amp; Craft</p>
     </footer>
 
     <!-- JAVASCRIPT FOR ICONS -->
